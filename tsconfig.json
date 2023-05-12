@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "outDir": "./built",
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "strict": true,
+    "strictPropertyInitialization": true,
     "jsx": "preserve",
+    "importHelpers": true,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
