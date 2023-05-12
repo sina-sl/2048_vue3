@@ -32,6 +32,7 @@ import BoardItem from "@/views/BoardItem.vue";
 import {computed, onMounted, onUnmounted, ref} from "vue";
 import {copy} from "@/utils/Utils";
 import {gsap} from "gsap";
+import {en} from "vuetify/locale";
 
 // eslint-disable-next-line no-undef
 const props = defineProps<{
@@ -68,7 +69,13 @@ const matrix = ref<MatrixItem[][]>([])
 const logic2048 = new Logic2048(4)
 
 
-function onUserEvent(ev:KeyboardEvent):void {
+function onUserEvent(ev:KeyboardEvent) {
+
+  if (!Object.values(ActionType).includes(ev.key)) {
+    // alert(ev.key)
+    // ev.preventDefault()
+    return false
+  }
 
   const actionResult = logic2048.action(
     copy(matrix.value),
